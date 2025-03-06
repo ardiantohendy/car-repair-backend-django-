@@ -12,7 +12,7 @@ class Book(models.Model):
     comment = models.TextField(blank=True, null=True)
     date = models.DateField()
     time = models.TimeField()
-
+    
     def __str__(self):
         return f"Booking by {self.name} on {self.date}"
 
