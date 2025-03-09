@@ -5,8 +5,8 @@ from book.models import Book
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['username', 'email', 'password', 'password2']
-        extra_kwargs = {'password' : {'write_only': True}, 'password2': {'write_only':True}}
+        fields = ['username', 'email', 'password']
+        extra_kwargs = {'password' : {'write_only': True}}
     
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
